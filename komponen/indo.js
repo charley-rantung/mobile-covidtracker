@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import {View, Text, FlatList} from 'react-native';
 
-export default class indo extends Component{
+export default class Indo extends Component{
     constructor(){
         super();
         this.state = {
@@ -12,26 +12,44 @@ export default class indo extends Component{
     }
 
     componentDidMount = () => {
-        fetch('https://covid19.mathdro.id/api')
+        fetch('https://indonesia-covid-19.mathdro.id/api/provinsi')
         .then(response => response.json())
-        .then(json => this.setState({data: json}))
+        .then(json => this.setState({data: json.data}))
     }
 
 
     render(){
+        // console.log(this.state.data)
 
         // const list = this.state.data.map( passingDisini => passingDisini.id)
         return(
             <View>
                 <FlatList 
                     data={this.state.data}
-                    //data: data yang akan digunakan
-                    keyExtractor={item => item.id.toString()}
-                    // parameter item akan diisi sesuai dengan props data
-                    renderItem={ ({item}) => <Text>item.id</Text>}
-
-                    refreshing={/*Tipe data boolean*/}
-                    onRefresh ={/*disini masukan fungsi*/() => {}}
+                    keyExtractor={item => {item.fid.toString()}}
+                    renderItem = {
+                        ({item}) => (
+                            <View style={{height: 50, flexDirection: 'row', alignItems:'center',justifyContent: 'space-between', borderWidth: 2, borderColor:'black', borderRadius: 10, margin: 5}}>
+                                <View style={{marginLeft: 5}}>
+                                    <Text>{item.provinsi}</Text>
+                                </View>
+                                <View style={{flexDirection:'row'}}>
+                                    <View style={{height: 25, width: 55, borderRadius: 10, backgroundColor: 'yellow', justifyContent: 'center', alignItems: 'center', margin: 5}}>
+                                        <Text>{item.kasusPosi}</Text>
+                                    </View>
+                                    <View style={{height: 25, width: 55, borderRadius: 10, backgroundColor: 'green', justifyContent: 'center', alignItems: 'center', margin: 5}}>
+                                        <Text>{item.kasusSemb}</Text>
+                                    </View>
+                                    <View style={{height: 25, width: 55, borderRadius: 10, backgroundColor: 'red', justifyContent: 'center', alignItems: 'center', margin: 5}}>
+                                        <Text>{item.kasusMeni}</Text>
+                                    </View>
+                                </View>
+                            </View>
+                        )
+                    }
+                    
+                    // refreshing= {true}
+                    // onRefresh ={/*disini masukan fungsi*/() => {}}
                 />
             </View>
         )
