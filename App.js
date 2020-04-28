@@ -1,10 +1,38 @@
 import React from 'react';
-import { StyleSheet, Text, View } from 'react-native';
-
+import { StyleSheet, Text, View, FlatList } from 'react-native';
+import indo from './komponen/indo';
 export default function App() {
   return (
-    <View style={styles.container}>
-      <Text>Open up App.js to start working on your app!</Text>
+    <View>
+      {/* Global */}
+      <View>
+        <View>
+          <Text style={{textAlign: 'center', fontWeight: 'bold'}}>Global</Text>
+        </View>
+        <View>
+          <View>
+            <Text>Positif</Text>
+            <Text></Text>
+          </View>
+          <View>
+            <Text>Sembuh</Text>
+            <Text></Text>
+          </View>
+          <View>
+            <Text>Meninggal</Text>
+            <Text></Text>
+          </View>
+        </View>
+      </View>
+      {/* Indonesia */}
+      <View>
+        {/* Sub-title */}
+        <View>
+          <Text style={{textAlign: 'center', fontWeight: 'bold'}}>Indonesia</Text>
+        </View>
+        {/* Flatlist */}
+        <indo />
+      </View>
     </View>
   );
 }
