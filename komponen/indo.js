@@ -23,10 +23,10 @@ export default class Indo extends Component{
 
         // const list = this.state.data.map( passingDisini => passingDisini.id)
         return(
-            <View>
+            <View style={{flex: 1}}>
                 <FlatList 
                     data={this.state.data}
-                    keyExtractor={item => {item.fid.toString()}}
+                    keyExtractor={item => item.fid.toString()}
                     renderItem = {
                         ({item}) => (
                             <View style={{height: 50, flexDirection: 'row', alignItems:'center',justifyContent: 'space-between', borderWidth: 2, borderColor:'black', borderRadius: 10, margin: 5}}>

@@ -1,34 +1,25 @@
 import React from 'react';
-import { StyleSheet, Text, View, FlatList } from 'react-native';
+import { StyleSheet, Text, View } from 'react-native';
 import Indo from './komponen/Indo';
+import Global from './komponen/Global';
 export default function App() {
   return (
     <View style={{flex:1}}>
+      <View style={styles.Title}>
+        <Text style={{fontSize: 24, fontWeight: 'bold'}}>Data COVID-19 Global & Indonesia</Text>
+      </View>
       {/* Global */}
-      <View style={{flex:1}}>
-        <View>
-          <Text style={{textAlign: 'center', fontWeight: 'bold'}}>Global</Text>
+      <View style={{marginTop: 10, flex: 1}}> 
+        <View style={styles.subPlace}>
+          <Text style={styles.subText}>Global</Text>
         </View>
-        <View style={{flex:1, flexDirection: 'row'}}>
-          <View style={{flex:1, backgroundColor: 'blue', alignItems: 'center', borderRadius:20}}>
-            <Text>Positif</Text>
-            <Text></Text>
-          </View>
-          <View style={{flex:1, backgroundColor: 'green', alignItems: 'center', borderRadius:20}}>
-            <Text>Sembuh</Text>
-            <Text></Text>
-          </View>
-          <View style={{flex:1, backgroundColor: 'grey', alignItems: 'center', borderRadius:20}}>
-            <Text>Meninggal</Text>
-            <Text></Text>
-          </View>
-        </View>
+        <Global/>
       </View>
       {/* Indonesia */}
-      <View style={{flex:1}}>
+      <View style={{marginTop: 25, flex: 5}}>
         {/* Sub-title */}
-        <View>
-          <Text style={{textAlign: 'center', fontWeight: 'bold'}}>Indonesia</Text>
+        <View style={styles.subPlace}>
+          <Text style={styles.subText}>Indonesia</Text>
         </View>
         {/* Flatlist */}
         <Indo />
@@ -38,10 +29,22 @@ export default function App() {
 }
 
 const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-    backgroundColor: '#fff',
-    alignItems: 'center',
-    justifyContent: 'center',
+  subText: {
+    fontSize: 24,
+    fontWeight: 'normal'
   },
+  subPlace: {
+    alignItems: 'center',
+    justifyContent: 'center'
+  },
+  Title: {
+    flex: 0.5,
+    backgroundColor: '#F8F8F8',
+    justifyContent: 'center',
+    alignItems: 'center',
+          marginTop: 23,
+    shadowColor: '#000',
+    shadowOffset: { width: 0, height: 2 },
+    shadowOpacity: 0.2
+   }
 });
