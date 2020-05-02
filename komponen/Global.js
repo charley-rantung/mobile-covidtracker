@@ -28,15 +28,15 @@ export default class Global extends Component {
         return(
             
             <View style={{height: 75, flexDirection: 'row', justifyContent: 'space-evenly'}}>
-                <View style={[styles.box, {backgroundColor: 'yellow'}]}>
+                <View style={[styles.box, {backgroundColor: '#fbd000'}]}>
                     <Text style={styles.text}>Positif</Text>
                     <Text style={styles.text}>{this.state.positif}</Text>
                 </View>
-                <View style={[styles.box, {backgroundColor: 'green'}]}>
+                <View style={[styles.box, {backgroundColor: '#00f690'}]}>
                     <Text style={styles.text}>Sembuh</Text>
                     <Text style={styles.text}>{this.state.sembuh}</Text>
                 </View>
-                <View style={[styles.box, {backgroundColor: 'red'}]}>
+                <View style={[styles.box, {backgroundColor: '#ff5b42'}]}>
                     <Text style={styles.text}>Meninggal</Text>
                     <Text style={styles.text}>{this.state.meninggal}</Text>
                 </View>

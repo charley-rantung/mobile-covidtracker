@@ -5,23 +5,33 @@ export default class Indo extends Component{
     constructor(){
         super();
         this.state = {
-            data: []
+            data: [],
+            refreshing: false
         }
 
 
     }
 
     componentDidMount = () => {
+        this.fetchingData()
+    }
+
+    fetchingData = () => {
+        this.setState({refreshing: true})
         fetch('https://indonesia-covid-19.mathdro.id/api/provinsi')
         .then(response => response.json())
-        .then(json => this.setState({data: json.data}))
+        .then(json => this.setState({data: json.data, refreshing: false}))
+    }
+
+    onRefresh = () => {
+        // this.setState({refreshing: true})
+        this.fetchingData()
+        // this.setState({refreshing: false})
     }
 
 
     render(){
-        // console.log(this.state.data)
 
-        // const list = this.state.data.map( passingDisini => passingDisini.id)
         return(
             <View style={{flex: 1}}>
                 <FlatList 
@@ -34,13 +44,13 @@ export default class Indo extends Component{
                                     <Text>{item.provinsi}</Text>
                                 </View>
                                 <View style={{flexDirection:'row'}}>
-                                    <View style={{height: 25, width: 55, borderRadius: 10, backgroundColor: 'yellow', justifyContent: 'center', alignItems: 'center', margin: 5}}>
+                                    <View style={{height: 25, width: 55, borderRadius: 10, backgroundColor: '#fbd000', justifyContent: 'center', alignItems: 'center', margin: 5}}>
                                         <Text>{item.kasusPosi}</Text>
                                     </View>
-                                    <View style={{height: 25, width: 55, borderRadius: 10, backgroundColor: 'green', justifyContent: 'center', alignItems: 'center', margin: 5}}>
+                                    <View style={{height: 25, width: 55, borderRadius: 10, backgroundColor: '#00f690', justifyContent: 'center', alignItems: 'center', margin: 5}}>
                                         <Text>{item.kasusSemb}</Text>
                                     </View>
-                                    <View style={{height: 25, width: 55, borderRadius: 10, backgroundColor: 'red', justifyContent: 'center', alignItems: 'center', margin: 5}}>
+                                    <View style={{height: 25, width: 55, borderRadius: 10, backgroundColor: '#ff5b42', justifyContent: 'center', alignItems: 'center', margin: 5}}>
                                         <Text>{item.kasusMeni}</Text>
                                     </View>
                                 </View>
@@ -48,8 +58,8 @@ export default class Indo extends Component{
                         )
                     }
                     
-                    // refreshing= {true}
-                    // onRefresh ={/*disini masukan fungsi*/() => {}}
+                    refreshing= {this.state.refreshing}
+                    onRefresh = {this.fetchingData}
                 />
             </View>
         )
