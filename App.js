@@ -41,15 +41,5 @@ const styles = StyleSheet.create({
   subPlace: {
     alignItems: 'center',
     justifyContent: 'center'
-  },
-  Title: {
-    flex: 0.5,
-    backgroundColor: '#F8F8F8',
-    justifyContent: 'center',
-    alignItems: 'center',
-          marginTop: 23,
-    shadowColor: '#000',
-    shadowOffset: { width: 0, height: 2 },
-    shadowOpacity: 0.9
-   }
+  }
 });
