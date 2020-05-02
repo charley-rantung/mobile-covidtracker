@@ -27,18 +27,18 @@ export default class Global extends Component {
 
         return(
             
-            <View style={{height: 75, flexDirection: 'row', justifyContent: 'space-evenly'}}>
-                <View style={[styles.box, {backgroundColor: '#fbd000'}]}>
-                    <Text style={styles.text}>Positif</Text>
-                    <Text style={styles.text}>{this.state.positif}</Text>
+            <View style={{flex: 1, flexDirection: 'column', justifyContent: 'space-evenly', marginTop: 10}}>
+                <View style={[styles.box, {backgroundColor: '#5F0008'}]}>
+                    <Text style={[styles.text, {color: '#ffffff'}]}>Positif</Text>
+                    <Text style={[styles.text, {color: '#ffffff'}]}>{this.state.positif}</Text>
                 </View>
-                <View style={[styles.box, {backgroundColor: '#00f690'}]}>
+                <View style={[styles.box, {backgroundColor: '#ffffff', borderWidth: 0, borderColor: '#1A1A1A'}]}>
                     <Text style={styles.text}>Sembuh</Text>
                     <Text style={styles.text}>{this.state.sembuh}</Text>
                 </View>
-                <View style={[styles.box, {backgroundColor: '#ff5b42'}]}>
-                    <Text style={styles.text}>Meninggal</Text>
-                    <Text style={styles.text}>{this.state.meninggal}</Text>
+                <View style={[styles.box, {backgroundColor: '#1A1A1A'}]}>
+                    <Text style={[styles.text, {color: '#ffffff'}]}>Meninggal</Text>
+                    <Text style={[styles.text, {color: '#ffffff'}]}>{this.state.meninggal}</Text>
                 </View>
             </View>
         )
@@ -47,9 +47,9 @@ export default class Global extends Component {
 
 const styles = StyleSheet.create({
     box: {
-        height: 75,
-        width: 90,
-        borderRadius: 15,
+        flex: 1,
+        width: 110,
+        borderRadius: 0,
         justifyContent: 'center',
         alignItems: 'center'
     },

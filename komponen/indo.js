@@ -34,24 +34,24 @@ export default class Indo extends Component{
 
         return(
             <View style={{flex: 1}}>
-                <FlatList 
+                <FlatList style={{borderWidth: 2, marginTop: 10}}
                     data={this.state.data}
                     keyExtractor={item => item.fid.toString()}
                     renderItem = {
                         ({item}) => (
-                            <View style={{height: 50, flexDirection: 'row', alignItems:'center',justifyContent: 'space-between', borderWidth: 2, borderColor:'black', borderRadius: 10, margin: 5}}>
-                                <View style={{marginLeft: 5}}>
-                                    <Text>{item.provinsi}</Text>
+                            <View style={{height: 60, flexDirection: 'column', alignItems:'center',justifyContent: 'space-between', borderWidth: 0, borderColor:'black', borderRadius: 10}}>
+                                <View>
+                                    <Text style={{color: '#5F0008'}}>{item.provinsi}</Text>
                                 </View>
                                 <View style={{flexDirection:'row'}}>
-                                    <View style={{height: 25, width: 55, borderRadius: 10, backgroundColor: '#fbd000', justifyContent: 'center', alignItems: 'center', margin: 5}}>
-                                        <Text>{item.kasusPosi}</Text>
+                                    <View style={{height: 25, width: 55, borderRadius: 10, backgroundColor: '#5F0008', justifyContent: 'center', alignItems: 'center', margin: 5}}>
+                                        <Text style={{color: '#ffffff'}}>{item.kasusPosi}</Text>
                                     </View>
-                                    <View style={{height: 25, width: 55, borderRadius: 10, backgroundColor: '#00f690', justifyContent: 'center', alignItems: 'center', margin: 5}}>
+                                    <View style={{height: 25, width: 55, borderRadius: 10, backgroundColor: '#ffffff', justifyContent: 'center', alignItems: 'center', margin: 5, borderWidth: 2, borderColor: '#1A1A1A'}}>
                                         <Text>{item.kasusSemb}</Text>
                                     </View>
-                                    <View style={{height: 25, width: 55, borderRadius: 10, backgroundColor: '#ff5b42', justifyContent: 'center', alignItems: 'center', margin: 5}}>
-                                        <Text>{item.kasusMeni}</Text>
+                                    <View style={{height: 25, width: 55, borderRadius: 10, backgroundColor: '#1a1a1a', justifyContent: 'center', alignItems: 'center', margin: 5}}>
+                                        <Text style={{color: '#ffffff'}}>{item.kasusMeni}</Text>
                                     </View>
                                 </View>
                             </View>
