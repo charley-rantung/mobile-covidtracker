@@ -11,7 +11,7 @@ export default function App() {
       {/* <View style={styles.Title}>
         <Text style={{fontSize: 24, fontWeight: 'bold'}}>Data COVID-19 Global & Indonesia</Text>
       </View> */}
-      <View style={{flex: 6, flexDirection: 'row', alignItems: 'center', marginVertical: 10}}>
+      <View style={{flex: 6, flexDirection: 'row', alignItems: 'center', marginVertical: 5}}>
         {/* Global */}
         <View style={{flex: 1, alignItems:'center'}}> 
           <View style={styles.subPlace}>
@@ -20,7 +20,7 @@ export default function App() {
           <Global/>
         </View>
         {/* Indonesia */}
-        <View style={{flex: 2, paddingRight: 15}}>
+        <View style={{flex: 2, paddingRight: 5}}>
           {/* Sub-title */}
           <View style={styles.subPlace}>
             <Text style={styles.subText}>Indonesia</Text>
