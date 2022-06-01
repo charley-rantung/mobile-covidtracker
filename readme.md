@@ -1,6 +1,6 @@
 # Covid Tracker
 ## Deskripsi
-Covid Tracker merupakan aplikasi mobile yang dapat memantau perkembangan dan penyebaran kasus covid-19 di Indonesia dan Global.
+Covid Tracker merupakan aplikasi berbasis mobile yang dapat memantau perkembangan dan penyebaran kasus covid-19 di Indonesia dan Global.
 
 ## Teknologi yang digunakan:
 - React Native
